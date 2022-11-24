@@ -23,7 +23,7 @@ Console.WriteLine(String.Join(", ", finalArray));
 */
 
 // "Умное", но не элегантное решение (а все для того, чтобы вывод был ровно так, как в примере показано)
-int[] tempArray = SizeCalculation(givenArray);
+int[] tempArray = SizeAndSelectCalculation(givenArray);
 string[] finalArray = new string[tempArray[0]];
 int i = 0;
 for (int j = 1; j < tempArray.Length; j++)
@@ -38,7 +38,7 @@ for (int j = 1; j < tempArray.Length; j++)
 Console.WriteLine(String.Join(", ", finalArray));
 
 
-int[] SizeCalculation(string[] collection)
+int[] SizeAndSelectCalculation(string[] collection)
 {
     int count = 0;
     int[] array = new int[collection.Length + 1];
@@ -49,7 +49,6 @@ int[] SizeCalculation(string[] collection)
             count++;
             array[i+1] = 1;
         }
-        else array[i+1] = 0;
     }
     array[0] = count;
     return array;
