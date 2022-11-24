@@ -1,5 +1,5 @@
 ﻿// Создаем массив и сразу задаем значения, чтоб не парить с вводом с клавиатуры
-string[] givenArray = { "hello", "2", "world", ":-)" };
+string[] givenArray = { "тык", "hello", "2", "world", ":-)" };
 
 /* Блок создания массива и его заполнения "с клавиатуры"
 Console.Write("Введите количество элементов в массиве: ");
@@ -30,7 +30,7 @@ for (int j = 1; j < tempArray.Length; j++)
 {
     if (tempArray[j] == 1)
     {
-        finalArray[i] = givenArray[j];
+        finalArray[i] = givenArray[j-1];
         i++;
     }
 }
@@ -47,9 +47,9 @@ int[] SizeCalculation(string[] collection)
         if (collection[i].Length <= textLength)
         {
             count++;
-            array[i] = 1;
+            array[i+1] = 1;
         }
-        else array[i] = 0;
+        else array[i+1] = 0;
     }
     array[0] = count;
     return array;
